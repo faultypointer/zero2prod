@@ -45,6 +45,9 @@
             cargo-edit
             cargo-watch
             rust-analyzer
+
+            lld
+            clang
           ];
 
           env = {
