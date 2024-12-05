@@ -50,13 +50,24 @@
 
             lld
             clang
+
+            postgresql
           ];
+
+          shellHook = ''
+            # Set CARGO_HOME to be within the project directory
+            export CARGO_HOME="$(pwd)/.direnv/.cargo"
+
+            # Add the local cargo bin to PATH
+            export PATH="$CARGO_HOME/bin:$PATH"
+          '';
 
           env = {
             # Required by rust-analyzer
             RUST_SRC_PATH =
               "${pkgs.rustToolchain}/lib/rustlib/src/rust/library";
             LD_LIBRARY_PATH = "${pkgs.openssl.out}/lib";
+
           };
         };
       });
