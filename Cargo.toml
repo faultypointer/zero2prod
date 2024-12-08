@@ -18,6 +18,9 @@ sqlx = { version = "0.8", features = ["runtime-tokio", "tls-rustls", "postgres",
 config = "0.14.1"
 chrono = "0.4.38"
 uuid = {version = "1.11.0", features = ["v4"]}
+env_logger = "0.11.5"
+log = "0.4.22"
+tracing = { version = "0.1.41", features = ["log"] }
 
 
 
